@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfileSustainability</title>
+    <link rel="stylesheet" href="profilepage.css">
+    <script src="Profilepage.js"></script>
+
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>User Profile</h1>
+        <p>Welcome to your profile! Manage your personal details and track your volunteering journey.</p>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="1.png" alt="Sustainability Logo" width="150">
+            </div>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="profilepage.html" class="active">Profile</a></li>
+                <li><a href="locationpage.html">Locations</a></li>
+                <li><a href="addLocationpage.html">Add Location</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- Profile Section -->
+            <section class="profile-section">
+                <div class="profile-header">
+                    <img src="icon.png" alt="User Avatar" class="profile-avatar">
+                    <h2 id="profileName"></h2>
+                    <p id="profileId"></p>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="profile-info">
+                    <h3>Personal Information</h3>
+                    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                    <p><strong>National ID:</strong> <span id="profileNationalId"></span></p>
+                </div>
+                <!-- Profile Statistics Section -->
+<!-- Volunteer Stats Section -->
+<div class="volunteer-stats">
+    <h3>Volunteer Statistics</h3>
+    <p><strong>Total Volunteering Activities:</strong> <span id="totalVolunteers">0</span></p>
+    <p><strong>Total Volunteering Hours:</strong> <span id="totalHours">0</span></p>
+</div>
+
+</div>
+
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Sustainability. All rights reserved.</p>
+    </footer>
+
+    
+</body>
+</html>
