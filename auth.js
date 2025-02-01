@@ -1,10 +1,3 @@
-// auth.js
-
-// Simulating a database (for demo purposes)
-let usersDatabase = [
-    { email: "user@example.com", password: "password123", name: "John Doe", dob: "1990-01-01", id: "12345" }
-];
-
 // Show signup form
 function showSignupForm() {
     document.getElementById("signup-form").style.display = "block";
@@ -17,41 +10,64 @@ function showLoginForm() {
     document.getElementById("login-form").style.display = "block";
 }
 
-// Signup function
-function signup() {
+// Signup function (sending data to backend)
+async function signup() {
     const name = document.getElementById("signup-name").value;
     const email = document.getElementById("signup-email").value;
     const password = document.getElementById("signup-password").value;
     const dob = document.getElementById("dob").value;
     const id = document.getElementById("id").value;
 
-    // Check if email already exists
-    let userExists = usersDatabase.some(user => user.email === email);
+    try {
+        const response = await fetch('http://localhost:5000/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, password, dob, id }),
+        });
 
-    if (userExists) {
-        alert("This email is already registered. Please log in.");
-        showLoginForm();
-    } else {
-        // Create a new user
-        usersDatabase.push({ email, password, name, dob, id });
-        alert("Account created successfully! Please log in.");
-        showLoginForm();
+        const data = await response.json();
+
+        if (response.ok) {
+            alert('Account created successfully! Please log in.');
+            showLoginForm();
+        } else {
+            alert(data.message || 'Error creating account');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error with signup process');
     }
 }
 
-// Login function
-function login() {
+// Login function (sending data to backend)
+async function login() {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
 
-    // Find user in the database
-    const user = usersDatabase.find(user => user.email === email && user.password === password);
+    try {
+        const response = await fetch('http://localhost:5000/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
 
-    if (user) {
-        alert("Login successful! Welcome, " + user.name);
-        // Redirect to home page and pass user's name in URL
-        window.location.href = "homepage.html?user=" + user.name;
-    } else {
-        alert("Invalid email or password. Please try again.");
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Login successful! Welcome, " + data.username);
+            // Store the token in localStorage or sessionStorage
+            localStorage.setItem('token', data.token);
+            // Redirect to homepage or dashboard
+            window.location.href = "homepage.html?user=" + data.username;
+        } else {
+            alert(data.message || 'Invalid email or password');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error with login process');
     }
 }
