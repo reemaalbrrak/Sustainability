@@ -1,0 +1,129 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #d3dfcb89;
+    direction: ltr;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    background: linear-gradient(90deg, #d3dfcb89, #29472e);
+    color: #29472e;
+    padding: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Main Register Form Section */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Register Form Section */
+.register-form {
+    width: 100%;
+    max-width: 450px;
+    background-color: #fafafa;
+    box-shadow: 0 4px 10px #29472e;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Input fields styling */
+.register-form .form-group {
+    margin-bottom: 15px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    color: #29472e;
+}
+
+.register-form button {
+    background-color: #95b39a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.register-form button:hover {
+    background-color: #29472e;
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Auth Link Section */
+#auth-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-link {
+    color: #29472e;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.auth-link:hover {
+    color: #101f12;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #29472e;
+    color: white;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .register-form {
+        width: 100%;
+    }
+}

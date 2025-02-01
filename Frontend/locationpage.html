@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations Sustainability</title>
+    <link rel="stylesheet" href="location.css">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Locations</h1>
+        <p>Explore the locations added by our community and find one near you!</p>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="1.png" alt="Sustainability Logo" width="150">
+            </div>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="profilepage.html">Profile</a></li>
+                <li><a href="locationpage.html" class="active">Locations</a></li>
+                <li><a href="addLocationpage.html">Add Location</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <section class="locations-section">
+                <h2>Available Locations</h2>
+
+                <!-- Filter Section -->
+                <div class="filters">
+                    <label for="cityFilter">Filter by City:</label>
+                    <select id="cityFilter">
+                        <option value="">All Cities</option>
+                        <option value="City1">Riyadh</option>
+                        <option value="City2">Jeddah</option>
+                        <option value="City3">Dammam</option>
+                    </select>
+
+                    <label for="searchFilter">Search by Name:</label>
+                    <input type="text" id="searchFilter" placeholder="Enter location name">
+                </div>
+
+                <!-- Locations List -->
+                <div id="locationsList" class="locations-list">
+                    <!-- Dynamically generated locations will appear here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Sustainability. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

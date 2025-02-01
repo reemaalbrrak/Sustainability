@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability - Sign Up / Login</title>
+    <link rel="stylesheet" href="auth.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Sustainability - Join Us</h1>
+        <p>Sign up or login to start volunteering for a cleaner world!</p>
+    </header>
+
+    <div class="auth-container">
+        <!-- Login Form -->
+        <section id="login-form">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showSignupForm()">Sign up here</a></p>
+        </section>
+
+        <!-- Signup Form -->
+        <section id="signup-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-name" placeholder="Full Name" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+            <input type="text" id="id" placeholder="ID" required>
+            <button onclick="signup()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="showLoginForm()">Login here</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sustainability. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
