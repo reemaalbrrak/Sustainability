@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProfileSustainability</title>
     <link rel="stylesheet" href="profilepage.css">
+    <script src="Profilepage.js"></script>
+
+
 </head>
 <body>
     <!-- Header Section -->
@@ -21,10 +24,10 @@
             </div>
             <ul>
                 <li><a href="homepage.html">Home</a></li>
-                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="profilepage.html" class="active">Profile</a></li>
                 <li><a href="locationpage.html">Locations</a></li>
                 <li><a href="addLocationpage.html">Add Location</a></li>
-                <li><a href="#support">Support</a></li>
+                <li><a href="support.html">Support</a></li>
             </ul>
         </div>
 
@@ -33,7 +36,7 @@
             <!-- Profile Section -->
             <section class="profile-section">
                 <div class="profile-header">
-                    <img src="user-avatar.png" alt="User Avatar" class="profile-avatar">
+                    <img src="icon.png" alt="User Avatar" class="profile-avatar">
                     <h2 id="profileName"></h2>
                     <p id="profileId"></p>
                 </div>
@@ -64,18 +67,6 @@
         <p>&copy; 2024 Sustainability. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Load user data from LocalStorage
-        const fullName = localStorage.getItem('fullName');
-        const email = localStorage.getItem('email');
-        const phone = localStorage.getItem('phone');
-        const nationalId = localStorage.getItem('nationalId');
-
-        // Display user data on profile
-        document.getElementById('profileName').textContent = fullName || 'Unknown User';
-        document.getElementById('profileEmail').textContent = email || 'Not provided';
-        document.getElementById('profilePhone').textContent = phone || 'Not provided';
-        document.getElementById('profileNationalId').textContent = nationalId || 'Not provided';
-    </script>
+    
 </body>
 </html>
